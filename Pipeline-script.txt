@@ -3,7 +3,7 @@ pipeline{
 	agent any
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('abinaya251-dockerhub')
+		DOCKERHUB_CREDENTIALS=credentials('abinaya251')
 	}
 
 	stages {
@@ -42,7 +42,7 @@ pipeline{
                 def dockerRun = 'docker run -d --name my-app -p 5003:5003 abinaya251/python-jenkins'
                 sshagent(['ssh-id']) {
                 // some block
-                sh "ssh -o StrictHostKeyChecking=no jenkinsvm@10.0.0.4 ${dockerRun}"
+                sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.91.103 ${dockerRun}"
             }
         }
     }
