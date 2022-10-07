@@ -42,7 +42,7 @@ pipeline{
                 def dockerRun = 'docker run -d -p 5003:5003 abinaya251/python-jenkins'
                 sshagent(['ssh-id']) {
                 // some block
-                sh "ssh -o StrictHostKeyChecking=no ubuntu@44.201.142.43 ${dockerRun}"
+                sh "ssh -o StrictHostKeyChecking=no ubuntu@52.203.29.88 ${dockerRun}"
             }
         }
     }
